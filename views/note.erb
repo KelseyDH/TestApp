@@ -1,0 +1,91 @@
+
+<h1>Add a note for <%= @contact.name %> </h1>
+
+
+
+<form method="post" action="/note/<%= @contact.id %>" class="form-horizontal">
+<fieldset>
+
+	<!-- Form Name -->
+	<legend>Edit Application</legend>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="name">Name</label>  
+	  <div class="col-md-5">
+	  <input id="name" name="name" type="text" value="<%= @contact.name %>" class="form-control input-md" required=""> 
+	  
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="address">Address</label>  
+	  <div class="col-md-5">
+	  <input id="address" name="address" type="text" value="<%= @contact.address %>" class="form-control input-md">
+	    
+	  </div>
+	</div>
+
+<!-- Ruby Code for Selecting Radio Value based on Database Entry-->
+<% if @contact.department=="technical"
+		technical_radio = "checked"
+	else 
+		technical_radio = ""
+		end %>
+
+<% if @contact.department=="marketing"
+		marketing_radio = "checked"
+	else 
+		marketing_radio = ""
+		end %>		
+
+<% if @contact.department=="sales"
+		sales_radio = "checked"
+	else 
+		sales_radio = ""
+		end %>
+
+	<!-- Multiple Radios -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="department">Department</label>
+	  <div class="col-md-4" value="<%= @contact.department %>">
+	  <div class="radio">
+	    <label for="department">
+	      <input type="radio" name="department" id="technical" <%= technical_radio %>>
+	      Technical
+	    </label>
+		</div>
+	  <div class="radio">
+	    <label for="department">
+	      <input type="radio" name="department" id="marketing" value="marketing" <%= marketing_radio %>>
+	      Marketing
+	    </label>
+		</div>
+	  <div class="radio">
+	    <label for="department">
+	      <input type="radio" name="department" id="sales" value="sales" <%= sales_radio %>>
+	      Sales
+	    </label>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Textarea -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="note">Comments</label>
+	  <div class="col-md-4">                     
+	    <textarea class="form-control" id="note" name="note"><%= @contact.note %></textarea>
+	  </div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="submit"></label>
+	  <div class="col-md-4">
+	    <button type="submit" id="submit" name="submit" class="btn btn-success">Submit Application</button>
+	  </div>
+	</div>
+
+</fieldset>
+</form>

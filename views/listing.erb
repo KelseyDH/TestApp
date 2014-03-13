@@ -1,0 +1,130 @@
+	<a href="/">Back to home</a>
+
+
+
+<!-- MASTER LIST OF ALL REGISTRATIONS -->
+<!-- <h2>Master List</h2>
+<table class="table table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Address</th>
+		<th>Department</th>
+		<th>Message</th>
+		<th> </th>
+		<th> </th>
+
+	</tr>
+
+	<% @all_contacts.each do |contact| %>
+		<tr>
+		
+		<td><%= contact.name %></td>
+		<td><%= contact.address %></td>
+		<td><%= contact.department %></td>
+		<td><%= contact.note %></td>
+		<td><a href="/note/<%= contact.id %>" class="btn btn-primary">Edit</a></td>
+		<td><a href="/delete/<%= contact.id %>" class="btn btn-danger">Delete</a></td>
+		</tr>
+	<% end %>
+
+
+</table> -->
+
+<h2>Technical</h2>
+<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Department</th>
+			<th>Message</th>
+			<th> </th>
+			<th> </th>
+
+		</tr>
+		<% @all_contacts.each do |contact| %>
+			<% if contact.department == "technical" %>
+			<tr>
+					<td><%= contact.name %></td>
+					<td><%= contact.address %></td>
+					<td><%= contact.department %></td>
+					<td><%= contact.note %></td>
+					<td><a href="/note/<%= contact.id %>" class="btn btn-primary">Edit</a></td>
+					<td><a href="/delete/<%= contact.id %>" class="btn btn-danger">Delete</a></td>
+			</tr>
+			<% else " " %>
+			<% end %>
+		<% end %>
+</table>
+
+<h2>Marketing</h2>
+<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Department</th>
+			<th>Message</th>
+			<th> </th>
+			<th> </th>
+
+		</tr>
+
+
+		<% @all_contacts.each do |contact| %>
+			<% if contact.department == "marketing" %>
+			<tr>
+					<td><%= contact.name %></td>
+					<td><%= contact.address %></td>
+					<td><%= contact.department %></td>
+					<td><%= contact.note %></td>
+					<td><a href="/note/<%= contact.id %>" class="btn btn-primary">Edit</a></td>
+					<td><a href="/delete/<%= contact.id %>" class="btn btn-danger">Delete</a></td>
+			</tr>
+			<% else " " %>
+			<% end %>
+		<% end %>
+</table>
+
+
+<h2>Sales</h2>
+<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Department</th>
+			<th>Message</th>
+			<th> </th>
+			<th> </th>
+
+
+		</tr>
+
+
+		<% @all_contacts.each do |contact| %>
+			<% if contact.department == "sales" %>
+			<tr>
+					<td><%= contact.name %></td>
+					<td><%= contact.address %></td>
+					<td><%= contact.department %></td>
+					<td><%= contact.note %></td>
+					<td><a href="/note/<%= contact.id %>" class="btn btn-primary">Edit</a></td>
+					<td><a href="/delete/<%= contact.id %>" class="btn btn-danger">Delete</a></td>
+			</tr>
+			<% else " " %>
+			<% end %>
+		<% end %>
+</table>
+<br>
+<br>
+		<a href="/">Back to home</a>
+
+
+
+<!-- location.each do |key, value|
+	if value.is_a? Array
+	puts "#{key}: #{value, join (", ")}"
+	else
+	puts "#{key}: #{value.join(', ')}"
+
+
+
+end -->
